@@ -1,0 +1,4 @@
+Hi this is file reader example
+Need to integrate with pipeline
+Testing for server streaming
+Sending line by line to client
