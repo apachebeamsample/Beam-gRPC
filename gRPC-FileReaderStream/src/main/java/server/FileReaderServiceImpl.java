@@ -19,7 +19,7 @@ public class FileReaderServiceImpl extends FileReaderServiceGrpc.FileReaderServi
     public void readFile(FileReaderRequest request,
                          StreamObserver<FileReaderResponse> responseObserver) {
         //asyncUnimplementedUnaryCall(getReadFileMethod(), responseObserver);
-
+        System.out.println("Request received");
         try (FileReader fr = new FileReader("./src/main/resources/sampleRest.json");
              BufferedReader br = new BufferedReader(fr)) {
             String nextLine;
@@ -38,6 +38,7 @@ public class FileReaderServiceImpl extends FileReaderServiceGrpc.FileReaderServi
             //localTmpFile.delete();
         }
         responseObserver.onCompleted();
+        System.out.println("Response sent successfully");
     }
  }
 
